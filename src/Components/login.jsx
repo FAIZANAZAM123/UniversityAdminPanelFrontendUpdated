@@ -77,7 +77,7 @@ else {
                   <form >
                     <center>
                       <img
-                        src="./Assets/logo.png"
+                        src="./Assets/logo.svg"
                         alt="Sushi"
                         style={{
                           width: "180px",
@@ -135,7 +135,7 @@ else {
       </div>
       <footer className="footer">
         <p>
-          &copy; {new Date().getFullYear()} Guess Game. All rights reserved.
+        &copy; {new Date().getFullYear()} Copyright © 2024 Universiti Tenaga Nasional (199601026142). All rights reserved. UNITEN Personal Data Protection Policy
         </p>
       </footer>
     </div>

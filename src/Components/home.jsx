@@ -14,28 +14,6 @@ export default function Home() {
     } else {
       document.body.className = "dark-mode";
     }
-
-    async function getAdminDashboard() {
-      await fetch(`${process.env.REACT_APP_BASE_URL}/api/admin/v1/getQuestions`, {
-        method: "GET",
-        headers: {
-          "api-key": process.env.REACT_APP_API_KEY,
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Request failed.");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setQuestions(data.data.length);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    }
-    getAdminDashboard();
   }, []);
 
   return (
@@ -62,13 +40,47 @@ export default function Home() {
                   <div className="d-flex justify-content-between align-items-center">
                     <div>
                       <MDBIcon
-                        icon="question"
+                        icon="user"
                         className="mr-2"
-                        style={{ marginRight: "5px" }}
+                        style={{ marginRight: "10px" }}
                       />
-                      No of Questions
+                      Registered Students
                     </div>
-                    <h2>{questions}</h2>
+                    <h2>10</h2>
+                  </div>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+            <MDBCol md="4">
+              <MDBCard style={{ marginTop: "5px", borderRadius: 0 }} id="card">
+                <MDBCardBody>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div>
+                      <MDBIcon
+                        icon="book"
+                        className="mr-2"
+                        style={{ marginRight: "10px" }}
+                      />
+                      Registered Courses
+                    </div>
+                    <h2>4</h2>
+                  </div>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+            <MDBCol md="4">
+              <MDBCard style={{ marginTop: "5px", borderRadius: 0 }} id="card">
+                <MDBCardBody>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div>
+                      <MDBIcon
+                        icon="computer"
+                        className="mr-2"
+                        style={{ marginRight: "10px" }}
+                      />
+                      Registered Programs
+                    </div>
+                    <h2>3</h2>
                   </div>
                 </MDBCardBody>
               </MDBCard>
